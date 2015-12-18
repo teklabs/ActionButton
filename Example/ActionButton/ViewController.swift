@@ -31,20 +31,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let twitterImage = UIImage(named: "twitter_icon.png")!
-        let plusImage = UIImage(named: "googleplus_icon.png")!
+        // Do any additional setup after loading the view.
+        let oneImage = UIImage(named: "one.png")!
+        let twoImage = UIImage(named: "two.png")!
         
-        let twitter = ActionButtonItem(title: "Twitter", image: twitterImage)
-        twitter.action = { item in print("Twitter...") }
+        let oneButton = ActionButtonItem(title: "Action Item 1", image: oneImage)
+        oneButton.action = { item in print("Action Item 1...") }
         
-        let google = ActionButtonItem(title: "Google Plus", image: plusImage)
-        google.action = { item in print("Google Plus...") }
+        let twoButton = ActionButtonItem(title: "Action Item 2", image: twoImage)
+        twoButton.action = { item in print("Action Item 2...") }
         
-        actionButton = ActionButton(attachedToView: self.view, items: [twitter, google])
+        actionButton = ActionButton(attachedToView: self.view, items: [oneButton, twoButton])
         actionButton.action = { button in button.toggleMenu() }
         actionButton.setTitle("+", forState: .Normal)
         
         actionButton.backgroundColor = UIColor(red: 238.0/255.0, green: 130.0/255.0, blue: 34.0/255.0, alpha:1.0)
+        
     }
 }
 
